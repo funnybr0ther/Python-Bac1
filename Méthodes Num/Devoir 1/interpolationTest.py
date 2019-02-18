@@ -24,7 +24,9 @@ X = (2*pi/(2*n+1))*arange(0,2*n+1)
 
 functions = [lambda x : x*(x-2*pi)*exp(-x),
              lambda x : sin(x)+sin(5*x),
-             lambda x : sign(x-2)]
+             lambda x : sign(x-2),
+             lambda x : sin(x/7)*x,
+             lambda x : sin(x**2 // 4*x)]
 
 for u in functions:
   plt.figure()

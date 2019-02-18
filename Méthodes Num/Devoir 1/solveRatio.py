@@ -3,14 +3,4 @@ from numpy.linalg import solve
 
 
 def interpolation(X,U,x):
-    n = (len(X)-1)//2
-    new_matrix = []
-    for l in X:
-        line = array([e**(1j*l*i) for i in range(-n,n+1)])
-        new_matrix.append(line)
-    b = real(solve(array(new_matrix), U))
-    uh = []
-    for i in x:
-        line = array([e**(1j*l*i) for l in range(-n,n+1)])
-        uh.append(dot(b,line))
-    return real(array(uh))
+    return real(array([dot(solve(array([array([e**(1j*l*i) for i in range(-((len(X)-1)//2),((len(X)-1)//2)+1)]) for l in X]), U),array([e**(1j*l*i) for l in range(-((len(X)-1)//2),((len(X)-1)//2)+1)])) for i in x]))
