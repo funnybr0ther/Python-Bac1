@@ -2,7 +2,7 @@
 Programme réalisé par Guillaume VDREST (surtout)et  Théo VDD(allé un peu qd meme)
 Novembre 2018
 """
-
+ 
 import math
 import matplotlib.pyplot as plt
 import numpy as np
@@ -24,6 +24,7 @@ dap = 0.3
 
 spring_angle = np.pi
 rigidity_k = 0.04
+
 
 
 global step
@@ -164,7 +165,7 @@ def compute_distance_balistic_no_air(Ecinetic, l4, h4):
     speedy = speed * (h4/((l4**2 + h4 **2)**0.5))
     t = speedy + ((speedy)**2 + 4 * h4 * 9.81)**0.5 / 9.81
     distance = speedx * t
-    return distance*100
+    return distance*100 
 
 def compute_energy_volant(rayon, hauteur, masse, omega):
     return masse/8*(rayon**2 + (hauteur**2)/3) * omega**2

@@ -62,7 +62,7 @@ class Facture :
         for i in range(barre_longeur):
             b += "="
         return b + "\n"
-
+x
     def article_str(self, art):
         """
         Retourne un string correspondant à une ligne de facture pour l'article art
@@ -91,3 +91,4 @@ class Facture :
         Cette méthode est une méthode auxiliaire pour la méthode printLivraison
         """
 
+facture = Facture("oui", "ta mère")

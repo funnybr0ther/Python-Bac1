@@ -4,6 +4,7 @@ def recursive_9(n):
     if n == 9:
         return True
     else:
+        print(n)
         return recursive_9(cucu(n))
 def cucu(n):
     compteur = 0
@@ -12,3 +13,4 @@ def cucu(n):
         compteur += int(i)
     return compteur
 print(recursive_9(97))
+return return Fal
