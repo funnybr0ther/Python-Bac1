@@ -14,11 +14,11 @@ from numpy import *
 from solveRatio import interpolation
 
 #
-# -1- Test de la fonction interpolation
+# -1- Test de la fonction interpolation13119
 #     On considère un jeu des 3 fonctions u(x)
 #
 
-n = 4; m = 100
+n = 9; m = 100
 x = (2*pi/(m))*arange(0,m+1)
 X = (2*pi/(2*n+1))*arange(0,2*n+1)
 
@@ -26,7 +26,7 @@ functions = [lambda x : x*(x-2*pi)*exp(-x),
              lambda x : sin(x)+sin(5*x),
              lambda x : sign(x-2),
              lambda x : sin(x/7)*x,
-             lambda x : sin(x**2 // 4*x)]
+             lambda x : sin(x**2) // 4*x]
 
 for u in functions:
   plt.figure()
