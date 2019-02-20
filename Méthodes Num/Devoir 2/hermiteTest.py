@@ -12,7 +12,7 @@
 
 from matplotlib import pyplot as plt
 from numpy import *
-from hermite import hermiteeee
+from hermite import hermite
 
 #
 # -1- Interpolation d'un cercle :-)
