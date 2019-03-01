@@ -1,5 +1,5 @@
 #
-# Approximation, interpolation 
+# Approximation, interpolation
 # L'utilisation des fonctions dite lambda en Python au passage
 #
 # Vincent Legat - 2018
@@ -29,11 +29,11 @@ u = lambda x : 1/(1.1-x)
 # et qui permet d'implémenter le switch de MATLAB ou du C
 # C'est assez joli mais un peu cryptique
 #
-    
-phi = lambda id,x : { 
+
+phi = lambda id,x : {
     0 : lambda x: x*(1+x)/2,
     1 : lambda x: -x*(1-x)/2,
-    2 : lambda x: (1-x)*(1+x)  
+    2 : lambda x: (1-x)*(1+x)
   }[id](x)
 
 # phi(1,0.1)
@@ -44,17 +44,17 @@ phi = lambda id,x : {
 # moins cryptique : il faut donc voir cela avec prudence
 #
 
-  
+
 def lagrange(x,U):
   u = zeros(size(x))
   for i in range(3):
     u += U[i]*phi(i,x)
   return u
- 
+
 #
 # -1- La fonction de référence
 #
-   
+
 X = array([1,-1,0])
 U = u(X)
 plt.plot(X,U,'.r',markersize=20)
@@ -85,7 +85,3 @@ uApproximation = lagrange(x,Uapp)
 plt.plot(x,uApproximation,'-b')
 
 plt.show()
-
-
-
-
