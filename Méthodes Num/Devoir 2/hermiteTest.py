@@ -19,7 +19,7 @@ from hermite import hermite
 #     avec les points et les dérivées exactes !
 #
 
-n = 4;
+n = 100;
 T = arange(0,3*pi/2,3*pi/(2*(n+1)))
 T = append(T,[2*pi])
 
