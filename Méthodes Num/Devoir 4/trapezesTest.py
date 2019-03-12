@@ -28,7 +28,7 @@ print("  True error = %14.7e" % errorExact)
 print("  Number of intervals = %d" % n)
 print("\n")
 
-I,n,errorEst = trapezeFun(u,a,b,n,200000,1e-12)
+I,n,errorEst = trapezeFun(u,a,b,n,6000000,1e-12)
 errorExact = abs(1.0 - I)
 print(" ======= Integral of sinus between 0 and pi/2 = %21.14e " % I)
 print("  True error = %14.7e" % errorExact)

@@ -11,10 +11,8 @@ def trapezeEasy(f,a,b,n):
 def trapezeFun(f,a,b,n,nmax,tol):
     prev = trapezeEasy(f,a,b,n)
     conteur = 0
-    while abs((trapezeEasy(f,a,b,2*n))-prev) < tol and conteur <= nmax:
-        prev = trapezeEasy
+    while abs((trapezeEasy(f,a,b,2*n))-prev) > tol and conteur <= nmax:
+        n *=2
+        prev = trapezeEasy(f,a,b,n)
         conteur += 1
     return prev,conteur, abs(trapezeEasy(f,a,b,2*n)-prev)
-def tamere(x):
-    return sin(x)
-print(trapezeEasy(tamere,0,2*pi,1000))
