@@ -10,9 +10,8 @@ def trapezeEasy(f,a,b,n):
 
 def trapezeFun(f,a,b,n,nmax,tol):
     prev = trapezeEasy(f,a,b,n)
-    conteur = 0
-    while abs((trapezeEasy(f,a,b,2*n))-prev) > tol and conteur <= nmax:
-        n *=2
-        prev = trapezeEasy(f,a,b,n)
-        conteur += 1
-    return prev,conteur, abs(trapezeEasy(f,a,b,2*n)-prev)
+    while n*2<nmax:
+        if abs(trapezeEasy(f,a,b,n)-trapezeEasy(f,a,b,2*n))<tol:
+            return trapezeEasy(f,a,b,2*n), n, abs(trapezeEasy(f,a,b,2*n)-trapezeEasy(f,a,b,n))
+        n*=2
+    return trapezeEasy(f,a,b,2*n), n, abs(trapezeEasy(f,a,b,2*n)-trapezeEasy(f,a,b,n))
