@@ -10,22 +10,23 @@ l = sin(x*(2*3*pi))
 y = y*2.5
 y = y+linspace(2.5,2.5,10000)
 y = y+l
-y = y*0.6
-y = y+linspace(1,1,10000)
-previous = 2
-next = 3
-for i in range(0,10000):
-    if 2.5 > y[i]:
-        z[i] = 5
+y = y*0.2
+y = y+linspace(2,2,10000)
+state = 5
+for i in range(0,9999):
+    if y[i+1]-y[i]>0:
+        state = 5
     else:
-        z[i] = 0
-plt.plot(x,y,'r', label = "V_C")
-plt.plot(x,linspace(1,1,10000),'--b',label = "Seuil -")
-plt.plot(x,linspace(4,4,10000),'--g',label = 'Seuil +')
+        state = 0
+    z[i] = state
+plt.plot(x,z,'--r', label = "V_in 1")
+plt.plot(x,5-z,'--b', label = "V_in 2")
+plt.plot(x,(z-2.5)*1.8,'c', label = "V_out")
 plt.xlabel("t")
 plt.ylabel("V")
 plt.legend(loc='upper right')
 axes = plt.gca()
 axes.set_xlim([0,1])
-axes.set_ylim([0,5])
+axes.set_ylim([-6,6])
+plt.savefig(fname="vout.pdf",format="pdf")
 plt.show()

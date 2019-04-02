@@ -1,3 +1,5 @@
+from time import clock
 
-a = [0,1,2,3]
-print(a[1:3])
+t1 = clock()
+l = input("h")
+print(clock()-t1)
