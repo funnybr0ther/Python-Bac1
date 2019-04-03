@@ -1,4 +1,3 @@
-
 from numpy import *
 from scipy.linalg import solve
 from math import factorial
@@ -13,4 +12,8 @@ def doublePrime(alpha):
         matrice[i] = alpha**i / factorial(i)
     betas = solve(matrice,x)
     print(betas)
-    
+    gamma = 1/(dot(betas,alpha**n/factorial(n)))
+    if not gamma == inf:
+        return betas,gamma,n-2
+    else:
+        return betas,1/dot(betas,alpha**(n+1)/factorial(n+1)),n-1
