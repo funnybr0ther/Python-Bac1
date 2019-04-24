@@ -58,8 +58,7 @@ for iTrial in trials:
   print("  == order of the method : %12d" % order)
   print("  == denominator of the error :  %6.0f" % gamma)
   print("  == estimated error :   %14.7e" % eh)
-  print("  == exact error :       %14.7e" % abs(dduh-ddu) )
-    
+  print("  == exact error :       %14.7e" % abs(dduh-ddu) )    
 #
 # -2.3- Joli plot
 #

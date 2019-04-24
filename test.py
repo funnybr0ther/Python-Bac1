@@ -1,5 +1,3 @@
-from time import clock
-
-t1 = clock()
-l = input("h")
-print(clock()-t1)
+from numpy import *
+a = array([1,2,-1,-2])
+print(abs(a))

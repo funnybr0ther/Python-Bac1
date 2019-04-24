@@ -11,9 +11,8 @@ def doublePrime(alpha):
     for i in range(n):
         matrice[i] = alpha**i / factorial(i)
     betas = solve(matrice,x)
-    print(betas)
-    gamma = 1/(dot(betas,alpha**n/factorial(n)))
-    if not gamma == inf:
-        return betas,gamma,n-2
+    gamma = (dot(betas,alpha**n/factorial(n)))
+    if not abs(gamma)<=dot(alpha**n,betas)*sum(abs(dot(matrice,betas)-x)) and not abs(gamma)<=10**10:
+        return betas,1/gamma,n-2
     else:
         return betas,1/dot(betas,alpha**(n+1)/factorial(n+1)),n-1
