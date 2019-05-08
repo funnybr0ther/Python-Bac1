@@ -1,2 +1,2 @@
-i = range(0,41)
-print(i)
+from numpy import *
+print(linspace(2,2,1,dtype = int))
