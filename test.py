@@ -1,2 +1,3 @@
-from numpy import *
-print(linspace(2,2,1,dtype = int))
+file = open("Strobo.py","rb")
+for line in file:
+    print(line)
