@@ -1,7 +1,7 @@
 from numpy import *
 from scipy.interpolate import CubicSpline as spline
-X = [1975,1980,1985,1990]
-Y = [70.2,70.2,70.3,71.2]
+X = sin(linspace(0,3,4)*pi / 6)
+Y = cos(linspace(0,3,4)* pi /6)
 print(X)
 X = array(X)
 Y = array(Y)
